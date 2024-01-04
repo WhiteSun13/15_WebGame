@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>15-шки</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="jscolor.js"></script>
+    
+    <div id="confetti"></div>
+
+    <div id="myBanner">
+        <h3>Размер поля</h3>
+        <input type="radio" id="choice1" name="difficult" value="3">
+        <label for="choice1">3x3</label>
+
+        <input type="radio" id="choice2" name="difficult" value="4" checked>
+        <label for="choice2">4x4</label>
+
+        <input type="radio" id="choice3" name="difficult" value="5">
+        <label for="choice3">5x5</label>
+
+        <input type="radio" id="choice4" name="difficult" value="6">
+        <label for="choice4">6x6</label>
+
+        <h3>Система счисления</h3>
+        <input type="radio" id="NumChoice1" name="numStyle" value="1" checked>
+        <label for="NumChoice1">Dec</label>
+        
+        <input type="radio" id="NumChoice2" name="numStyle" value="2">
+        <label for="NumChoice2">Bin</label>
+        
+        <input type="radio" id="NumChoice3" name="numStyle" value="3">
+        <label for="NumChoice3">Oct</label>
+
+        <input type="radio" id="NumChoice4" name="numStyle" value="4">
+        <label for="NumChoice4">Hex</label>
+
+        <input type="radio" id="NumChoice5" name="numStyle" value="5">
+        <label for="NumChoice5">中国人</label>
+
+        <input type="radio" id="NumChoice6" name="numStyle" value="6">
+        <label for="NumChoice6">None</label>
+        
+        <h3>Режим игры</h3>
+        <input type="radio" id="special1" name="special" value="0" checked>
+        <label for="special1">Обычный</label>
+
+        <input type="radio" id="special2" name="special" value="1">
+        <label for="special2">^_^</label>
+
+        <input type="radio" id="special3" name="special" value="2">
+        <label for="special3">Спектр</label>
+
+        <h3>Цвет плиток</h3>
+        <input id="color1" value="800080" data-jscolor="{onChange: 'updateColor(this, 1)'}">
+        <input id="color2" value="36005f" data-jscolor="{onChange: 'updateColor(this, 2)'}">
+        <h3>Цвет фона</h3>
+        <input id="color3" value="000125" data-jscolor="{onChange: 'updateColor(this, 3)'}">
+        <input id="color4" value="00125f" data-jscolor="{onChange: 'updateColor(this, 4)'}">
+
+        <h3>Узор плитки</h3>
+
+        <input type="radio" id="pt1" name="patternTile" value="0">
+        <label for="pt1">Groovy</label>
+
+        <input type="radio" id="pt2" name="patternTile" value="1" checked>
+        <label for="pt2">Formal Invitation</label>
+
+        <input type="radio" id="pt3" name="patternTile" value="2">
+        <label for="pt3">Hexagons</label>
+
+        <input type="radio" id="pt4" name="patternTile" value="3">
+        <label for="pt4">YYY</label>
+
+        <input type="radio" id="pt5" name="patternTile" value="4">
+        <label for="pt5">Circuit Board</label>
+
+        <input type="radio" id="pt6" name="patternTile" value="5">
+        <label for="pt6">4 Point Stars</label>
+
+        <input type="radio" id="pt7" name="patternTile" value="6">
+        <label for="pt7">Bubbles</label>
+
+        <input type="radio" id="pt8" name="patternTile" value="7">
+        <label for="pt8">Leaf</label>
+
+        <input type="radio" id="pt9" name="patternTile" value="8">
+        <label for="pt9">Glamorous</label>
+
+        <input type="radio" id="pt10" name="patternTile" value="9">
+        <label for="pt10">Random Shapes</label>
+
+        <input type="radio" id="pt11" name="patternTile" value="10">
+        <label for="pt11">Temple</label>
+
+        <h3>Узор фона</h3>
+
+        <input type="radio" id="pBG1" name="patternBG" value="0">
+        <label for="pBG1">Groovy</label>
+
+        <input type="radio" id="pBG2" name="patternBG" value="1">
+        <label for="pBG2">Formal Invitation</label>
+
+        <input type="radio" id="pBG3" name="patternBG" value="2" checked>
+        <label for="pBG3">Hexagons</label>
+
+        <input type="radio" id="pBG4" name="patternBG" value="3">
+        <label for="pBG4">YYY</label>
+
+        <input type="radio" id="pBG5" name="patternBG" value="4">
+        <label for="pBG5">Circuit Board</label>
+
+        <input type="radio" id="pBG6" name="patternBG" value="5">
+        <label for="pBG6">4 Point Stars</label>
+
+        <input type="radio" id="pBG7" name="patternBG" value="6">
+        <label for="pBG7">Bubbles</label>
+
+        <input type="radio" id="pBG8" name="patternBG" value="7">
+        <label for="pBG8">Leaf</label>
+
+        <input type="radio" id="pBG9" name="patternBG" value="8">
+        <label for="pBG9">Glamorous</label>
+
+        <input type="radio" id="pBG10" name="patternBG" value="9">
+        <label for="pBG10">Random Shapes</label>
+
+        <input type="radio" id="pBG11" name="patternBG" value="10">
+        <label for="pBG11">Temple</label>
+
+        <h3>Текст</h3>
+        <h4>Цвет</h4>
+        <input id="colorText" value="FFFFFF" data-jscolor="{onChange: 'updateColor(this, 5)'}">
+        
+        <h4>Размер</h4>
+        <input type="radio" id="TxtSize1" name="TxtSize" value="3vmin">
+        <label for="TxtSize1">Маленький</label>
+
+        <input type="radio" id="TxtSize2" name="TxtSize" value="4vmin">
+        <label for="TxtSize2">Средний</label>
+
+        <input type="radio" id="TxtSize3" name="TxtSize" value="5vmin" checked>
+        <label for="TxtSize3">Большой</label>
+
+        <h4>Расположение по вертикали</h4>
+        <input type="radio" id="TxtVpos1" name="TxtVpos" value="start">
+        <label for="TxtVpos1">Сверху</label>
+        
+        <input type="radio" id="TxtVpos2" name="TxtVpos" value="center" checked>
+        <label for="TxtVpos2">Центр</label>
+        
+        <input type="radio" id="TxtVpos3" name="TxtVpos" value="end">
+        <label for="TxtVpos3">Снизу</label>
+        
+        <h4>Расположение по горизонтали</h4>
+        <input type="radio" id="TxtHpos1" name="TxtHpos" value="start">
+        <label for="TxtHpos1">Слева</label>
+
+        <input type="radio" id="TxtHpos2" name="TxtHpos" value="center" checked>
+        <label for="TxtHpos2">Центр</label>
+
+        <input type="radio" id="TxtHpos3" name="TxtHpos" value="end">
+        <label for="TxtHpos3">Справа</label>
+        
+
+        <br>
+
+        <div id="toggleButton" onclick="toggleBanner()">Играть</div>
+        <div id="toggleButton" onclick="randomTheme()">Random</div>
+    </div>
+      
+    <button id="optionButton" onclick="toggleBanner()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+    </svg></button>
+
+    <div id="info" class="hide">
+        <p>Перемещать плитки можно тремя способами:</p>
+        <p>1. кликая мышкой на плитку, которую хотите передвинуть</p>
+        <p>2. на сенсорных экранах, троньте пальцем нужную вам плитку</p>
+        <p>3. используя клавиши со стрелками (← / ↑ / → / ↓) на клавиатуре</p>
+    </div>
+
+    <div id="playGround" class="half">
+        <div id="board"></div>
+    </div>
+
+    <div id="timer-container">
+        <p id="current-time">00:00.00</p>
+        <p id="record-time">Record: 00:00.00</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

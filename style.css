@@ -1,0 +1,256 @@
+:root {
+  --color1: #800080;
+  --color3: #000125;
+  --colorText: #FFFFFF;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+
+@font-face
+{
+  font-family: 'Nunito';
+  src: url('Nunito.ttf') format('truetype');
+}
+
+@font-face
+{
+  font-family: 'RussoOne';
+  src: url('RussoOne.ttf') format('truetype');
+}
+
+body{
+  background-color: var(--color3);
+  margin: 0;
+  overflow: hidden;
+}
+
+#playGround {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s ease;
+}
+
+#playGround.half {
+  width: 50vw;
+  height: 100vh;
+}
+
+#board {
+  position: relative;
+  height: 80vmin;
+  width: 80vmin;
+}
+
+.tile {
+  font-family: 'Mukta', sans-serif;
+  position: absolute;
+  width: calc(100% / 4 - 2vmin);
+  height: calc(100% / 4 - 2vmin);
+  border: 1px solid #000;
+  transition: all 0.2s;
+  font-weight: 700;
+  -webkit-text-stroke: 0.05vmin black;
+  color: var(--colorText);
+  cursor: pointer;
+  background-color: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+#myBanner {
+  position: fixed;
+  z-index: 1;
+  transition: 0.5s ease;
+
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+}
+
+#toggleButton {
+  color: white;
+  font-size: 3vmin;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 35px;
+  transition: background-color 0.3s ease;
+}
+
+#toggleButton:hover {
+  background-color: #0056b3;
+}
+
+/* Default styles for desktop */
+#myBanner {
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+#myBanner.hide {
+  left: -50%;
+  top: 0;
+}
+
+/* Styles for mobile */
+@media (max-width: 600px) {
+  #playGround.half {
+    width: 100vw;
+    height: 50vh;
+    bottom: 0;
+  }
+  
+  #myBanner {
+    width: 100%;
+    height: 50%;
+    left: 0;
+    top: 0;
+  }
+
+  #myBanner.hide {
+  left: 0;
+  top: -50%;
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  font-family: 'Mukta', sans-serif;
+  padding: 1vmin;
+  border-radius: 35px;
+  margin: 0.5vmin 0vmin;
+  border: 1px solid #784dbb;
+  background-color: white;
+  color: black;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--color1);
+  color: #f4f4f4;;
+}
+
+label:hover {
+  background-color: var(--color3);
+  color: #f4f4f4;;
+}
+
+*{
+  font-family: 'Nunito';
+}
+
+
+#optionButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: var(--color1);
+  color: white;
+  cursor: pointer;
+}
+
+#optionButton:hover {
+  background-color: var(--color3);
+}
+
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: red;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(150vh);
+  }
+}
+
+#timer-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: white;
+  -webkit-text-stroke: 0.1vmin black;
+  padding: 1.5vmin;
+  font-size: 3vmin;
+}
+
+#current-time{
+  font-family: 'RussoOne';
+  font-size: 5.5vmin;
+  margin: 0;
+}
+
+#record-time{
+  font-family: 'RussoOne';
+  text-align: end;
+  margin: 0;
+}
+
+#info{
+  position: fixed;
+  color: white;
+  background: #000000A8;
+  border-radius: 0px 25px 0px 0px;
+  transition: opacity 1s ease-in-out;
+  bottom: 0;
+  left: 0;
+  -webkit-text-stroke: 0.01vmin black;
+  padding: 1vmin;
+  font-size: 2.2vmin;
+}
+
+#info > p{
+  margin: 0;
+}
+
+#info.hide{
+  opacity: 0;
+}
+
+#toggleButton, label, .tile, #info{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; 
+}
